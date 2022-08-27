@@ -60,13 +60,13 @@ class Message
             || $this->sender->getRole() == Role::$STUDENT)
         ) {
             echo (
-            "\r\nSend failed to send text. These users are not allowed 
+            "\r\nSend failed! These users are not allowed 
             to message each other."
             );
             return false;
         }
 
-        echo "\r\nMessage sent successfully";
+        echo "\r\nMessage sent successfully!";
         return true;
     }
 
@@ -75,11 +75,11 @@ class Message
         if (($this->sender->getRole() != Role::$TEACHER ) 
             && ($this->messageType == MessageType::$SYSTEM)
         ) {
-            echo "\r\nSave failed to save text due to forbidden access.";
+            echo "\r\nSave message failed! Action not allowed.";
             return false;
         }
 
-        echo "\r\nSaved successfully.";
+        echo "\r\nSaved message successfully.";
         return true;
     }
 
